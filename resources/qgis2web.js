@@ -31,8 +31,13 @@ var map = new ol.Map({
     })
 });
 
+var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
+map.addControl(layerSwitcher);
+layerSwitcher.hidePanel = function() {};
+layerSwitcher.showPanel();
 
-map.getView().fit([2394549.851687, 8305704.334954, 2885916.245454, 8560086.071211], map.getSize());
+
+map.getView().fit([2761071.330254, 8427801.446367, 2811371.111471, 8448560.823401], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
