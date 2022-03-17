@@ -68,9 +68,9 @@ lyr_Pkseudunlhinpubi_3.set('fieldAliases', {'fid': 'fid', 'name': 'name', 'osoit
 lyr_Pyrmatkailureitti1_1.set('fieldImages', {'fid': 'TextEdit', 'osuus': 'TextEdit', 'nro': 'Range', 'km': 'TextEdit', });
 lyr_Kartanokierros_2.set('fieldImages', {'fid': '', 'Name': 'TextEdit', 'km': '', });
 lyr_Pkseudunlhinpubi_3.set('fieldImages', {'fid': 'TextEdit', 'name': 'TextEdit', 'osoite': 'TextEdit', });
-lyr_Pyrmatkailureitti1_1.set('fieldLabels', {'fid': 'no label', 'osuus': 'inline label', 'nro': 'no label', 'km': 'inline label', });
+lyr_Pyrmatkailureitti1_1.set('fieldLabels', {'fid': 'no label', 'osuus': 'no label', 'nro': 'no label', 'km': 'no label', });
 lyr_Kartanokierros_2.set('fieldLabels', {'fid': 'no label', 'Name': 'no label', 'km': 'no label', });
-lyr_Pkseudunlhinpubi_3.set('fieldLabels', {'fid': 'no label', 'name': 'no label', 'osoite': 'no label', });
+lyr_Pkseudunlhinpubi_3.set('fieldLabels', {'fid': 'no label', 'name': 'header label', 'osoite': 'inline label', });
 lyr_Pkseudunlhinpubi_3.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
