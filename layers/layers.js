@@ -42,18 +42,35 @@ var lyr_Kartanokierros_2 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_Kartanokierros_2, 
                 style: style_Kartanokierros_2,
-                interactive: false,
+                interactive: true,
                 title: '<img src="styles/legend/Kartanokierros_2.png" /> Kartanokierros'
             });
+var format_Pkseudunlhinpubi_3 = new ol.format.GeoJSON();
+var features_Pkseudunlhinpubi_3 = format_Pkseudunlhinpubi_3.readFeatures(json_Pkseudunlhinpubi_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Pkseudunlhinpubi_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Pkseudunlhinpubi_3.addFeatures(features_Pkseudunlhinpubi_3);
+var lyr_Pkseudunlhinpubi_3 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_Pkseudunlhinpubi_3, 
+                style: style_Pkseudunlhinpubi_3,
+                interactive: true,
+                title: '<img src="styles/legend/Pkseudunlhinpubi_3.png" /> Pk-seudun lähin pubi'
+            });
 
-lyr_OpenStreetMap_0.setVisible(true);lyr_Pyrmatkailureitti1_1.setVisible(true);lyr_Kartanokierros_2.setVisible(true);
-var layersList = [lyr_OpenStreetMap_0,lyr_Pyrmatkailureitti1_1,lyr_Kartanokierros_2];
+lyr_OpenStreetMap_0.setVisible(true);lyr_Pyrmatkailureitti1_1.setVisible(true);lyr_Kartanokierros_2.setVisible(true);lyr_Pkseudunlhinpubi_3.setVisible(false);
+var layersList = [lyr_OpenStreetMap_0,lyr_Pyrmatkailureitti1_1,lyr_Kartanokierros_2,lyr_Pkseudunlhinpubi_3];
 lyr_Pyrmatkailureitti1_1.set('fieldAliases', {'fid': 'fid', 'osuus': 'osuus', 'nro': 'nro', 'km': 'km', });
 lyr_Kartanokierros_2.set('fieldAliases', {'fid': 'fid', 'Name': 'Name', 'km': 'km', });
+lyr_Pkseudunlhinpubi_3.set('fieldAliases', {'fid': 'fid', 'name': 'name', 'osoite': 'osoite', });
 lyr_Pyrmatkailureitti1_1.set('fieldImages', {'fid': 'TextEdit', 'osuus': 'TextEdit', 'nro': 'Range', 'km': 'TextEdit', });
 lyr_Kartanokierros_2.set('fieldImages', {'fid': '', 'Name': 'TextEdit', 'km': '', });
+lyr_Pkseudunlhinpubi_3.set('fieldImages', {'fid': 'TextEdit', 'name': 'TextEdit', 'osoite': 'TextEdit', });
 lyr_Pyrmatkailureitti1_1.set('fieldLabels', {'fid': 'no label', 'osuus': 'inline label', 'nro': 'no label', 'km': 'inline label', });
 lyr_Kartanokierros_2.set('fieldLabels', {'fid': 'no label', 'Name': 'no label', 'km': 'no label', });
-lyr_Kartanokierros_2.on('precompose', function(evt) {
+lyr_Pkseudunlhinpubi_3.set('fieldLabels', {'fid': 'no label', 'name': 'no label', 'osoite': 'no label', });
+lyr_Pkseudunlhinpubi_3.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
